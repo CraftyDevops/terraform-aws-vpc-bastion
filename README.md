@@ -21,12 +21,8 @@ provider "aws" {
 }
 
 module "my_secure_vpc" {
-  # Replace with the correct source pointing to this module.
-  # If you cloned it locally and are in the `examples/basic-usage` directory:
-  source = "../../"
 
-  # If you are using it from a GitHub repository (recommended for reusability):
-  # source = "github.com/YourGitHubOrganization/terraform-aws-vpc-bastion?ref=v1.0.0" # Replace with your repo and desired version/tag
+  source = "github.com/CraftyDevops/terraform-aws-vpc-bastion?ref=v1.0.0" #Replace with desired version
 
   name_prefix    = "prod-app"
   vpc_cidr_block = "10.0.0.0/16"
