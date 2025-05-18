@@ -16,13 +16,9 @@ Terraform module to create a secure and flexible AWS VPC with public/private sub
 ## Usage
 
 ```terraform
-provider "aws" {
-  region = "us-east-1" // Specify your desired AWS region
-}
+module "vpc_bastion" {
 
-module "my_secure_vpc" {
-
-  source = "github.com/CraftyDevops/terraform-aws-vpc-bastion?ref=v1.0.0" #Replace with desired version
+  source = "CraftyDevops/vpc-bastion/aws"
 
   name_prefix    = "prod-app"
   vpc_cidr_block = "10.0.0.0/16"
@@ -44,7 +40,7 @@ module "my_secure_vpc" {
 
   # --- Bastion Host Configuration ---
   enable_bastion_host         = true
-  bastion_instance_type       = "t2.micro" // t2.micro is often in the AWS Free Tier
+  bastion_instance_type       = "t2.micro"
   bastion_ssh_key_name        = "your-bastion-key-pair-name"      // IMPORTANT: REPLACE with your actual EC2 Key Pair name
   bastion_ingress_cidr_blocks = ["YOUR_PUBLIC_IP_ADDRESS/32"]     // IMPORTANT: REPLACE with your public IP address for secure SSH access
 
