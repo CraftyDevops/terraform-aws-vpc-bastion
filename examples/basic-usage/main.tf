@@ -1,7 +1,3 @@
-provider "aws" {
-  region = var.aws_region
-}
-
 module "vpc_bastion_example" {
   source = "CraftyDevops/vpc-bastion/aws"
 
