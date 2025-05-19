@@ -1,9 +1,5 @@
-provider "aws" {
-  region = var.aws_region
-}
-
 module "vpc_bastion_example" {
-  source = "github.com/CraftyDevops/terraform-aws-vpc-bastion?ref=v1.0.0" #Check the current version
+  source = "CraftyDevops/vpc-bastion/aws"
 
   name_prefix    = "vpc-dev"
   vpc_cidr_block = "10.10.0.0/16"
